@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  margin-bottom: 32px;
+}
+h3 {
+  text-align: center;
+}
+nav {
+  padding: 15px;
+  background-color: teal;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+input {
+  display: block;
+  width: 300px;
+  margin: 5px auto;
+  padding: 10px;
+}
+button  {
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin: 0 auto;
+}
+.error {
+  margin: 10px 0;
+  text-align: center;
+  color: red;
+}
+table, td {
+  border: 1px solid #333;
+}
+td {
+  padding: 5px;
+}
+.del {
+  color: red;
+  cursor: pointer;
+}

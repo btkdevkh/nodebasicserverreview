@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %> 
+<body>
+  <%- include('./partials/nav.ejs') %> 
+  <main>
+    <h3><%= locals.profil ? 'Update' : 'Create' %></h3>
+
+    <form action="<%= locals.profil ? '/user/update' : '/user/create' %>" method="post">
+      <input type="text" placeholder="Firstname" name="firstname" value="<%= locals.profil ? locals.profil.first_name : '' %>">
+      <input type="text" placeholder="Lastname" name="lastname" value="<%= locals.profil ? locals.profil.last_name : '' %>">
+      <input type="hidden" name="id" value="<%= locals.profil ? locals.profil.id : '' %>">
+    
+      <button type="submit">Submit</button>
+      <p class="error"><%= locals.message %></p>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %> 
+<body>
+  <%- include('./partials/nav.ejs') %> 
+
+  <main>
+    <h1>NodeJS Crash Course</h1>
+
+    <% if(locals.people.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Firstname</td>
+            <td>Lastname</td>
+            <td>Created At</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% locals.people.forEach(person => { %>
+            <tr>
+              <td><%= person.id %></td>
+              <td>
+                <a href="/user/update/<%= person.id %>">
+                  <%= person.first_name %> 
+                </a>
+              </td>
+              <td><%= person.last_name %></td>
+              <td><%= moment(person.created_at).format("MMM Do YY") %></td>
+              <td>
+                <a href="#" class="del" data-id="<%= person.id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
